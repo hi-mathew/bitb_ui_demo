@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BitB Detector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 BitB Phishing Detector</h1>
+
+  <button id="analyzeBtn">Analyze Iframe</button>
+
+  <div id="result">Click "Analyze" to check the iframe content.</div>
+
+  <hr />
+
+  <iframe id="targetIframe" src="test-login.html"></iframe>
+
+  <script src="js/detector.js"></script>
+</body>
+</html>
