@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>BitB Detector</title>
+  <meta charset="UTF-8">
+  <title>BitB Phishing Detector</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
+      margin: 20px;
     }
-
-    iframe {
-      width: 400px;
-      height: 300px;
-      border: 1px solid #ccc;
-    }
-
-    #result {
-      margin-top: 20px;
+    #statusBanner {
+      padding: 15px;
       font-weight: bold;
+      display: none;
+      border-radius: 6px;
+    }
+    iframe {
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
-  <h1>🔍 BitB Phishing Detector</h1>
+  <h2>BitB Phishing Detector</h2>
 
-  <button id="analyzeBtn">Analyze Iframe</button>
+  <div>
+    <label for="urlInput">Enter Suspicious Page URL:</label>
+    <input type="text" id="urlInput" placeholder="http://127.0.0.1:5500/test-login.html" size="50">
+    <button onclick="analyzePage()">Analyze</button>
+  </div>
 
-  <div id="result">Click "Analyze" to check the iframe content.</div>
+  <iframe id="targetIframe" width="100%" height="300" style="margin-top: 20px;"></iframe>
 
-  <hr />
+  <div id="statusBanner"></div>
+  <div id="reasons" style="margin-top: 10px;"></div>
 
-  <iframe id="targetIframe" src="test-login.html"></iframe>
-
-  <script src="js/detector.js"></script>
+  <script type="module" src="js/detector.js"></script>
 </body>
 </html>

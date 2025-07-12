@@ -2,14 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fake Login</title>
+  <title>Fake Login Simulation</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-login {
+      width: 400px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      overflow: hidden;
+    }
+
+    .popup-login iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    .fake-header {
+      background-color: #4285f4;
+      color: white;
+      padding: 12px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h2>Secure Login</h2>
-  <form>
-    <input type="text" placeholder="Username" /><br />
-    <input type="password" placeholder="Password" /><br />
-    <button type="submit">Login</button>
-  </form>
+  <div class="overlay" id="fake-login">
+    <div class="popup-login">
+      <div class="fake-header">Google Login</div>
+      <iframe src="nested-login.html"></iframe>
+    </div>
+  </div>
 </body>
 </html>
